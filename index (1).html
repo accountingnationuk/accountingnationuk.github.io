@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================= -->
+<!--  HOW TO EDIT THIS FILE (for beginners)                        -->
+<!--  1. Text lives between the tags, e.g. h1 Your text /h1.       -->
+<!--     Just change the words, leave the angle-bracket tags alone.-->
+<!--  2. Notes that begin with the word EDIT mark the spots you    -->
+<!--     will most likely want to change.                          -->
+<!--  3. To change a colour, edit the values under ":root" in the  -->
+<!--     style section below (the ones starting with teal etc).    -->
+<!-- ============================================================= -->
+
+<!-- EDIT: page title (shows in the browser tab and on Google) -->
+<title>Accounting Nation | Accountants &amp; Tax Advisers in London</title>
+<!-- EDIT: description Google shows under your title in search results -->
+<meta name="description" content="Tax, bookkeeping and payroll for sole traders, limited companies and growing businesses across London and the UK. Fixed fees, personal service, MTD-ready.">
+
+<meta property="og:title" content="Accounting Nation | Accountants & Tax Advisers in London">
+<meta property="og:description" content="Tax, bookkeeping and payroll for London's businesses. Fixed fees, personal service.">
+<meta property="og:type" content="website">
+
+<!-- Favicon: a small teal "ledger" mark drawn in code, no image file needed -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230C2436'/%3E%3Cg stroke='%230FB0A6' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M9 21 V15'/%3E%3Cpath d='M16 21 V11'/%3E%3Cpath d='M23 21 V17'/%3E%3C/g%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   DESIGN TOKENS  —  edit these to re-colour the whole site
+   ========================================================= */
+:root{
+  --navy:      #0C2436;   /* deep navy — dark sections & headings */
+  --navy-2:    #103048;   /* lighter navy for gradients */
+  --teal:      #0E8079;   /* brand teal — accents & links */
+  --teal-br:   #0FB0A6;   /* brighter teal for highlights/hover */
+  --teal-deep: #0A5C57;
+
+  --bg:        #F4F7F7;   /* page background (cool off-white) */
+  --surface:   #FFFFFF;   /* cards */
+  --ink:       #15242F;   /* body text */
+  --muted:     #566773;   /* secondary text */
+  --line:      #DBE3E4;   /* hairline borders */
+
+  --maxw: 1180px;
+  --pad: clamp(1.25rem, 4vw, 2.5rem);
+  --sec-pad: clamp(4rem, 9vw, 7.5rem);
+
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:  'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono:  'IBM Plex Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(12,36,54,.04), 0 14px 40px -22px rgba(12,36,54,.28);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* shared layout helpers */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:var(--sec-pad)}
+
+/* eyebrow label — the little "ledger line item" tag */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--teal);
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+  font-weight:500;
+}
+.eyebrow::before{
+  content:"";
+  width:26px;height:1px;
+  background:var(--teal);
+  display:inline-block;
+}
+.section--dark .eyebrow{color:var(--teal-br)}
+.section--dark .eyebrow::before{background:var(--teal-br)}
+
+/* headings */
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--navy)}
+.section--dark h1,.section--dark h2,.section--dark h3{color:#fff}
+h2{font-size:clamp(1.9rem,4.4vw,3.1rem)}
+h3{font-size:1.2rem;line-height:1.25}
+em{font-style:italic;color:var(--teal)}
+.section--dark em{color:var(--teal-br)}
+
+.lead{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--muted);max-width:56ch}
+.section--dark .lead{color:rgba(255,255,255,.72)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--sans);font-weight:600;font-size:.94rem;
+  padding:.85rem 1.5rem;border-radius:999px;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+}
+.btn:focus-visible{outline:2px solid var(--teal-br);outline-offset:3px}
+.btn--primary{background:var(--teal);color:#fff}
+.btn--primary:hover{background:var(--teal-deep);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+.section--dark .btn--ghost{color:#fff;border-color:rgba(255,255,255,.28)}
+.section--dark .btn--ghost:hover{border-color:var(--teal-br);color:var(--teal-br)}
+.btn .arrow{transition:transform .18s ease}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(244,247,247,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color .2s ease, background .2s ease;
+}
+.site-header.scrolled{border-bottom-color:var(--line);background:rgba(244,247,247,.94)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:var(--serif);font-size:1.3rem;color:var(--navy);font-weight:600}
+.brand svg{flex:none}
+.brand b{font-weight:600}
+.brand span{color:var(--teal)}   /* the word "Nation" in teal */
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.94rem;font-weight:500;color:var(--ink);position:relative;padding-block:.3rem}
+.nav-links a:not(.btn)::after{
+  content:"";position:absolute;left:0;bottom:-2px;height:1.5px;width:0;background:var(--teal);transition:width .2s ease;
+}
+.nav-links a:not(.btn):hover::after{width:100%}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;transition:.25s}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;color:#fff;
+  /* Background layers, listed TOP first. The last line is the SKYLINE PHOTO.
+     TO CHANGE THE PHOTO: swap the url(...) below for another image link,
+     or download a picture, name it "skyline.jpg", upload it next to this
+     file, and change the url to  url('skyline.jpg')  */
+  background-image:
+    radial-gradient(120% 90% at 86% 8%, rgba(15,176,166,.20), transparent 55%),
+    linear-gradient(to bottom, transparent 52%, rgba(8,22,38,.9) 100%),
+    linear-gradient(103deg, rgba(9,24,40,.93) 0%, rgba(11,32,50,.86) 44%, rgba(12,36,54,.58) 100%),
+    url('https://images.unsplash.com/photo-1626289296186-bb511ef4285b?q=80&w=2400&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center, center, center, center;
+  background-repeat:no-repeat;
+  padding-block:clamp(4.5rem,10vw,8rem);
+  overflow:hidden;
+}
+/* faint ruled "ledger paper" lines behind the hero */
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(to bottom, rgba(255,255,255,.045) 0 1px, transparent 1px 46px);
+  mask-image:linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+  pointer-events:none;
+}
+.hero .wrap{position:relative}
+.hero h1{
+  color:#fff;font-size:clamp(2.5rem,6.4vw,4.6rem);line-height:1.02;
+  margin:1.4rem 0 1.3rem;max-width:16ch;
+}
+.hero h1 em{color:var(--teal-br)}
+.hero p{max-width:52ch;color:rgba(255,255,255,.78);font-size:clamp(1.02rem,1.7vw,1.22rem)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.hero-cta .btn--ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+.hero-cta .btn--ghost:hover{border-color:var(--teal-br);color:var(--teal-br)}
+.hero-addr{
+  margin-top:2.6rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;
+  color:rgba(255,255,255,.6);display:flex;align-items:center;gap:.6rem;
+}
+.hero-addr::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal-br);flex:none}
+
+/* animated reveal on load */
+.reveal{opacity:0;transform:translateY(16px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.15s}
+.reveal.d3{animation-delay:.25s}.reveal.d4{animation-delay:.35s}.reveal.d5{animation-delay:.45s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* =========================================================
+   MARQUEE (scrolling services strip)
+   ========================================================= */
+.marquee{background:var(--navy);border-block:1px solid rgba(255,255,255,.08);overflow:hidden;padding-block:1rem}
+.marquee-track{display:flex;width:max-content;gap:0;animation:scroll 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track .item{
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);padding-inline:1.6rem;white-space:nowrap;display:flex;align-items:center;gap:1.6rem;
+}
+.marquee-track .item::after{content:"◦";color:var(--teal-br)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* =========================================================
+   WHY  (3 feature cards)
+   ========================================================= */
+.head{max-width:640px;margin-bottom:3rem}
+.head h2{margin-top:1rem}
+.head .lead{margin-top:1.1rem}
+
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.feature{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:2rem 1.8rem;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.feature:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+.feature .ico{
+  width:46px;height:46px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(14,128,121,.1);color:var(--teal);margin-bottom:1.2rem;
+}
+.feature h3{margin-bottom:.55rem}
+.feature p{color:var(--muted);font-size:.96rem}
+
+/* =========================================================
+   STATS band (dark)
+   ========================================================= */
+.stats{background:var(--navy);color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:left}
+.stat .num{font-family:var(--mono);font-size:clamp(2.4rem,4.6vw,3.4rem);color:var(--teal-br);font-weight:500;line-height:1}
+.stat .lbl{margin-top:.7rem;color:rgba(255,255,255,.66);font-size:.9rem;max-width:22ch}
+.stat{border-top:1px solid rgba(255,255,255,.14);padding-top:1.2rem}
+
+/* =========================================================
+   PRACTICE feature block (split)
+   ========================================================= */
+.practice .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.practice .panel{
+  background:linear-gradient(155deg,var(--navy),var(--navy-2));
+  border-radius:var(--radius);color:#fff;padding:clamp(2rem,4vw,3rem);position:relative;overflow:hidden;
+  min-height:280px;display:flex;flex-direction:column;justify-content:center;
+}
+.practice .panel::after{
+  content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(to bottom,rgba(255,255,255,.05) 0 1px,transparent 1px 40px);
+  mask-image:linear-gradient(120deg,transparent,#000);
+}
+.practice .panel .q{position:relative;font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.3;color:#fff}
+.practice .panel .q em{color:var(--teal-br)}
+.practice .panel .sig{position:relative;margin-top:1.4rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+/* =========================================================
+   SERVICES  (numbered grid)
+   ========================================================= */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.svc{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:2rem 1.8rem;position:relative;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+.svc .no{font-family:var(--mono);font-size:.9rem;color:var(--teal);font-weight:500;letter-spacing:.05em}
+.svc h3{margin:.9rem 0 .55rem}
+.svc p{color:var(--muted);font-size:.96rem}
+.svc::before{content:"";position:absolute;left:0;top:1.9rem;width:3px;height:0;background:var(--teal);border-radius:2px;transition:height .25s ease}
+.svc:hover::before{height:34px}
+
+/* =========================================================
+   SECTORS  (who we serve)
+   ========================================================= */
+.sectors{background:#fff;border-block:1px solid var(--line)}
+.sec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2.6rem}
+.sector{
+  display:flex;gap:1.2rem;align-items:flex-start;
+  padding:1.7rem;border:1px solid var(--line);border-radius:var(--radius);
+  transition:border-color .2s ease, background .2s ease;
+}
+.sector:hover{border-color:var(--teal);background:rgba(14,128,121,.03)}
+.sector .ico{flex:none;width:42px;height:42px;border-radius:10px;background:var(--navy);color:var(--teal-br);display:grid;place-items:center}
+.sector h3{font-size:1.1rem;margin-bottom:.35rem}
+.sector p{color:var(--muted);font-size:.94rem}
+
+/* =========================================================
+   STANDARD  (numbered principles list)
+   ========================================================= */
+.standard-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:2.6rem;border-top:1px solid var(--line)}
+.principle{display:flex;gap:1.4rem;padding:1.8rem .5rem;border-bottom:1px solid var(--line)}
+.principle .no{font-family:var(--mono);color:var(--teal);font-size:.95rem;font-weight:500;flex:none;padding-top:.15rem}
+.principle h3{font-size:1.08rem;margin-bottom:.3rem}
+.principle p{color:var(--muted);font-size:.94rem}
+@media(min-width:721px){
+  .principle:nth-child(odd){padding-right:2.5rem}
+  .principle:nth-child(even){padding-left:2.5rem;border-left:1px solid var(--line)}
+}
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+.quote{background:var(--navy);color:#fff;text-align:center}
+.quote blockquote{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.3;max-width:20ch;margin-inline:auto;color:#fff}
+.quote blockquote em{color:var(--teal-br)}
+.quote .by{margin-top:1.6rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.quote .mark{font-family:var(--serif);font-size:4rem;line-height:.5;color:var(--teal-br);display:block;margin-bottom:1rem}
+
+/* =========================================================
+   CTA / CONTACT
+   ========================================================= */
+.cta .box{
+  background:linear-gradient(155deg,var(--navy),var(--navy-2));border-radius:var(--radius);
+  color:#fff;padding:clamp(2.4rem,5vw,4rem);text-align:center;position:relative;overflow:hidden;
+}
+.cta .box::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(90% 120% at 50% -10%, rgba(15,176,166,.28), transparent 60%);
+}
+.cta .box>*{position:relative}
+.cta h2{color:#fff;margin-bottom:1rem}
+.cta p{color:rgba(255,255,255,.78);max-width:48ch;margin-inline:auto}
+.cta .btn{margin-top:1.8rem}
+.contact-details{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2.4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.14)}
+.contact-details div{font-family:var(--mono);font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.72)}
+.contact-details .k{color:var(--teal-br);display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem}
+.contact-details a:hover{color:#fff;text-decoration:underline}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer{background:#08192a;color:rgba(255,255,255,.66);padding-block:clamp(3rem,6vw,4.5rem) 2rem}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.4fr;gap:2.5rem}
+.foot-brand .brand{color:#fff;margin-bottom:1rem}
+.foot-brand .brand span{color:var(--teal-br)}
+.foot-brand p{font-size:.9rem;max-width:30ch}
+.foot-col h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-br);margin-bottom:1.1rem;font-weight:500}
+.foot-col ul{list-style:none;display:grid;gap:.6rem}
+.foot-col a,.foot-col li{font-size:.9rem}
+.foot-col a:hover{color:#fff}
+.foot-bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.8rem;color:rgba(255,255,255,.5)}
+.foot-bottom .legal{display:flex;gap:1.4rem}
+.foot-bottom a:hover{color:#fff}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width:900px){
+  .cards-3,.svc-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:2rem 1.5rem}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:720px){
+  .nav-links{
+    position:fixed;inset:74px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem var(--pad) 1.4rem;
+    transform:translateY(-120%);transition:transform .3s ease;box-shadow:var(--shadow);
+  }
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{padding:.9rem 0;border-bottom:1px solid var(--line)}
+  .nav-links a.btn{margin-top:1rem;justify-content:center;border-bottom:0}
+  .nav-links a:not(.btn)::after{display:none}
+  .nav-toggle{display:block}
+  .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.active span:nth-child(2){opacity:0}
+  .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .cards-3,.svc-grid,.sec-grid,.standard-list{grid-template-columns:1fr}
+  .practice .split{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .principle:nth-child(even){padding-left:.5rem;border-left:0}
+  .contact-details{flex-direction:column;gap:1.3rem}
+}
+
+/* accessibility: respect reduced-motion */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================== HEADER ============================== -->
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <!-- EDIT: your business name. To use an image logo instead, replace
+         this whole <a> with: <a class="brand" href="#top"><img src="logo.png" alt="Accounting Nation" style="height:38px"></a> -->
+    <a class="brand" href="#top" aria-label="Accounting Nation home">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="#0C2436"/>
+        <g stroke="#0FB0A6" stroke-width="2.4" stroke-linecap="round">
+          <path d="M9 21 V15"/><path d="M16 21 V11"/><path d="M23 21 V17"/>
+        </g>
+      </svg>
+      <b>Accounting&nbsp;<span>Nation</span></b>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#sectors">Who We Help</a>
+      <a href="#about">About</a>
+      <a class="btn btn--primary" href="mailto:info@accountingnation.co.uk?subject=Quote%20request">Get a Quote</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow reveal d1">London E17 — Accountants &amp; Tax Advisers</p>
+    <!-- EDIT: main headline. Words inside <em> ... </em> appear in teal italic. -->
+    <h1 class="reveal d2">Sound accounts. <em>Sharper</em> decisions.</h1>
+    <p class="reveal d3">Tax, bookkeeping and payroll for sole traders, limited companies and growing businesses across London and the UK — delivered with precision and a personal touch.</p>
+    <div class="hero-cta reveal d4">
+      <a class="btn btn--primary" href="#services">Explore Services <span class="arrow">→</span></a>
+      <a class="btn btn--ghost" href="mailto:info@accountingnation.co.uk?subject=Quote%20request">Request a Quote</a>
+    </div>
+    <!-- EDIT: your address -->
+    <p class="hero-addr reveal d5">Suite Ra01, 195–197 Wood Street, London E17 3NU</p>
+  </div>
+</section>
+
+<!-- ============================== MARQUEE ============================== -->
+<!-- EDIT: the scrolling keywords. Keep the two lists identical so the loop is seamless. -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="item">Self Assessment</div><div class="item">Limited Companies</div>
+    <div class="item">VAT Returns</div><div class="item">Payroll &amp; PAYE</div>
+    <div class="item">Bookkeeping</div><div class="item">Corporation Tax</div>
+    <div class="item">Sole Traders</div><div class="item">MTD for Income Tax</div>
+    <div class="item">Management Accounts</div><div class="item">CIS Returns</div>
+    <div class="item">Company Formation</div><div class="item">Year-End Accounts</div>
+    <!-- duplicate -->
+    <div class="item">Self Assessment</div><div class="item">Limited Companies</div>
+    <div class="item">VAT Returns</div><div class="item">Payroll &amp; PAYE</div>
+    <div class="item">Bookkeeping</div><div class="item">Corporation Tax</div>
+    <div class="item">Sole Traders</div><div class="item">MTD for Income Tax</div>
+    <div class="item">Management Accounts</div><div class="item">CIS Returns</div>
+    <div class="item">Company Formation</div><div class="item">Year-End Accounts</div>
+  </div>
+</div>
+
+<!-- ============================== WHY ============================== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Why Accounting Nation</span>
+      <h2>Accounting done <em>properly.</em></h2>
+      <p class="lead">Fixed, transparent pricing and a clear scope on every engagement. Full-service accounting from a firm that treats your business like its own.</p>
+    </div>
+    <div class="cards-3">
+      <div class="feature">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3>Fixed fees</h3>
+        <p>Clear monthly or annual pricing agreed up front. No hourly surprises, no vague retainers.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.3 3.1-6 7-6s7 2.7 7 6"/></svg></div>
+        <h3>One point of contact</h3>
+        <p>A dedicated accountant who knows your business, not a call-centre queue.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3H4z"/><path d="M4 10v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="m9 15 2 2 4-4"/></svg></div>
+        <h3>MTD-ready</h3>
+        <p>Fully prepared for Making Tax Digital for Income Tax from April 2026. Compliant software, set up for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STATS ============================== -->
+<section class="section stats section--dark">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><div class="num" data-target="3" data-suffix="">3</div><div class="lbl">Core services under one roof — tax, books &amp; payroll</div></div>
+      <div class="stat"><div class="num" data-target="100" data-suffix="%">100%</div><div class="lbl">Fixed, transparent pricing on every package</div></div>
+      <div class="stat"><div class="num" data-target="24" data-suffix="hr">24hr</div><div class="lbl">Response to every new enquiry</div></div>
+      <div class="stat"><div class="num" data-target="0" data-suffix="">0</div><div class="lbl">Hidden fees or surprise invoices, ever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRACTICE ============================== -->
+<section class="section practice">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Our practice</span>
+      <h2 style="margin:1rem 0 1.1rem">Records built to <em>stand up to scrutiny.</em></h2>
+      <p class="lead">We maintain your books to a standard that supports clean statutory filing, reduces last-minute stress and gives you full visibility of your numbers all year round.</p>
+      <div style="margin-top:1.8rem"><a class="btn btn--ghost" href="#services">Explore Services <span class="arrow">→</span></a></div>
+    </div>
+    <div class="panel">
+      <p class="q">One discipline, done well — from the first invoice to the final <em>year-end filing.</em></p>
+      <p class="sig">Accounting Nation UK Limited</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVICES ============================== -->
+<section class="section" id="services" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">What we do</span>
+      <h2>Full-service <em>accounting.</em></h2>
+      <p class="lead">Everything a growing business needs to stay compliant and in control — under one roof.</p>
+    </div>
+    <div class="svc-grid">
+      <!-- EDIT: each service — change the number, title and text -->
+      <div class="svc"><div class="no">01</div><h3>Bookkeeping</h3><p>Accurate, up-to-date records maintained throughout the year, not just at year-end.</p></div>
+      <div class="svc"><div class="no">02</div><h3>Tax Returns</h3><p>Self Assessment and Corporation Tax prepared, checked and filed on time, every time.</p></div>
+      <div class="svc"><div class="no">03</div><h3>VAT</h3><p>Registration, scheme advice and quarterly VAT returns submitted digitally to HMRC.</p></div>
+      <div class="svc"><div class="no">04</div><h3>Payroll</h3><p>Full PAYE payroll, RTI submissions, payslips and pension auto-enrolment handled for you.</p></div>
+      <div class="svc"><div class="no">05</div><h3>Year-End Accounts</h3><p>Statutory accounts prepared and filed with Companies House and HMRC.</p></div>
+      <div class="svc"><div class="no">06</div><h3>Company Formation</h3><p>New company set-up, registration and everything you need to start trading.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SECTORS ============================== -->
+<section class="section sectors" id="sectors">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:0">
+      <span class="eyebrow">Who we help</span>
+      <h2>Built around <em>your</em> business.</h2>
+    </div>
+    <div class="sec-grid">
+      <div class="sector">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M6 21c0-3 2.7-5 6-5s6 2 6 5"/></svg></div>
+        <div><h3>Sole Traders &amp; Freelancers</h3><p>Simple, fixed-fee accounting with Self Assessment handled for you.</p></div>
+      </div>
+      <div class="sector">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6l7-3 7 3v15"/><path d="M9 21v-5h4v5M9 9h.01M13 9h.01M9 13h.01M13 13h.01"/></svg></div>
+        <div><h3>Limited Companies</h3><p>Bookkeeping, VAT, payroll, year-end accounts and Corporation Tax in one package.</p></div>
+      </div>
+      <div class="sector">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V10l6-4 6 4v11"/><path d="m10 6-1-3h6l-1 3"/></svg></div>
+        <div><h3>Contractors &amp; CIS</h3><p>CIS returns, contractor verification and construction-sector bookkeeping.</p></div>
+      </div>
+      <div class="sector">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.5 5 5.5.8-4 3.9.9 5.5L12 20l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></div>
+        <div><h3>Startups &amp; Small Businesses</h3><p>From formation to first accounts, guidance at every step as you grow.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STANDARD ============================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:0">
+      <span class="eyebrow">How we work</span>
+      <h2>The standard we <em>hold ourselves to.</em></h2>
+    </div>
+    <div class="standard-list">
+      <div class="principle"><div class="no">01</div><div><h3>Clear engagement</h3><p>Scope, responsibilities and fees agreed in writing before any work begins.</p></div></div>
+      <div class="principle"><div class="no">02</div><div><h3>Fixed, fair pricing</h3><p>Every package states exactly what's included. No scope creep, no surprise invoices.</p></div></div>
+      <div class="principle"><div class="no">03</div><div><h3>Digital by default</h3><p>MTD-compliant, cloud-based software so your figures are always current and accessible.</p></div></div>
+      <div class="principle"><div class="no">04</div><div><h3>On time, every time</h3><p>Deadlines met without chasing. Filings submitted well ahead of HMRC cut-offs.</p></div></div>
+      <div class="principle"><div class="no">05</div><div><h3>A real relationship</h3><p>Proactive advice throughout the year, not just a once-a-year form-filling exercise.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== QUOTE ============================== -->
+<section class="section quote section--dark">
+  <div class="wrap">
+    <span class="mark">“</span>
+    <blockquote>Good accounting isn't a year-end chore. It's the groundwork for every <em>confident</em> decision a business makes.</blockquote>
+    <p class="by">Accounting Nation</p>
+  </div>
+</section>
+
+<!-- ============================== CTA / CONTACT ============================== -->
+<section class="section cta" id="contact">
+  <div class="wrap">
+    <div class="box">
+      <h2>Let's talk about your accounts.</h2>
+      <p>Tell us about your business and we'll send a clear, fixed-fee quote — usually within one working day.</p>
+      <a class="btn btn--primary" href="mailto:info@accountingnation.co.uk?subject=Quote%20request">Request a Quote <span class="arrow">→</span></a>
+      <div class="contact-details">
+        <!-- EDIT: your contact details. Add a phone line by copying one of these blocks. -->
+        <div><span class="k">Email</span><a href="mailto:info@accountingnation.co.uk">info@accountingnation.co.uk</a></div>
+        <div><span class="k">Office</span>Suite Ra01, 195–197 Wood Street, London E17 3NU</div>
+        <div><span class="k">Phone</span><a href="tel:+44">Add your phone number</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand"><b>Accounting <span>Nation</span></b></div>
+        <p>Tax, bookkeeping and payroll for sole traders, limited companies and growing businesses across London and the UK.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#sectors">Who We Help</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Bookkeeping</a></li>
+          <li><a href="#services">Tax Returns</a></li>
+          <li><a href="#services">VAT &amp; Payroll</a></li>
+          <li><a href="#services">Year-End Accounts</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@accountingnation.co.uk">info@accountingnation.co.uk</a></li>
+          <li>Suite Ra01, 195–197 Wood Street,<br>London E17 3NU</li>
+          <li><a href="mailto:info@accountingnation.co.uk?subject=Quote%20request">Request a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Accounting Nation UK Limited · Registered in England &amp; Wales, company no. 15940821.</span>
+      <span class="legal"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* --- sticky header shadow on scroll --- */
+const header = document.querySelector('.site-header');
+addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 12));
+
+/* --- mobile menu toggle --- */
+const toggle = document.getElementById('navToggle');
+const links  = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.classList.toggle('active', open);
+  toggle.setAttribute('aria-expanded', open);
+});
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  links.classList.remove('open'); toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', false);
+}));
+
+/* --- count-up animation for the stat numbers --- */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const nums = document.querySelectorAll('.num[data-target]');
+if (!reduce && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.target, suffix = el.dataset.suffix || '';
+      let start = null;
+      const step = (t) => {
+        if (!start) start = t;
+        const p = Math.min((t - start) / 1100, 1);
+        el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  nums.forEach(n => io.observe(n));
+}
+</script>
+</body>
+</html>
