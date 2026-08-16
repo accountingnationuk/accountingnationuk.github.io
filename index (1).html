@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ============================================================= -->
+<!--  HOW TO EDIT THIS FILE (for beginners)                        -->
+<!--  1. Text lives between the tags, e.g. h1 Your text /h1.       -->
+<!--     Just change the words, leave the angle-bracket tags alone.-->
+<!--  2. Notes that begin with the word EDIT mark the spots you    -->
+<!--     will most likely want to change.                          -->
+<!--  3. To change a colour, edit the values under ":root" in the  -->
+<!--     style section below (the ones starting with teal etc).    -->
+<!-- ============================================================= -->
+
 <!-- EDIT: page title (shows in the browser tab and on Google) -->
 <title>Accounting Nation | Accountants &amp; Tax Advisers in London</title>
 <!-- EDIT: description Google shows under your title in search results -->
@@ -171,7 +181,7 @@ em{font-style:italic;color:var(--teal)}
 .hero .wrap{position:relative}
 .hero h1{
   color:#fff;font-size:clamp(2.5rem,6.4vw,4.6rem);line-height:1.02;
-  margin:1.4rem 0 1.3rem;max-width:16ch;
+  margin:0 0 1.3rem;max-width:16ch;
 }
 .hero h1 em{color:var(--teal-br)}
 .hero p{max-width:52ch;color:rgba(255,255,255,.78);font-size:clamp(1.02rem,1.7vw,1.22rem)}
@@ -317,10 +327,23 @@ em{font-style:italic;color:var(--teal)}
 .cta h2{color:#fff;margin-bottom:1rem}
 .cta p{color:rgba(255,255,255,.78);max-width:48ch;margin-inline:auto}
 .cta .btn{margin-top:1.8rem}
-.contact-details{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2.4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.14)}
-.contact-details div{font-family:var(--mono);font-size:.82rem;letter-spacing:.03em;color:rgba(255,255,255,.72)}
-.contact-details .k{color:var(--teal-br);display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem}
-.contact-details a:hover{color:#fff;text-decoration:underline}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2.4rem;text-align:left}
+.ctile{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.3rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:transform .18s ease,background .18s ease,border-color .18s ease}
+a.ctile:hover{transform:translateY(-3px);background:rgba(255,255,255,.09);border-color:var(--teal-br)}
+.ctile .chip{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--teal-br)}
+.ctile .chip.wa{background:#25D366;color:#fff}
+.ctile .chip.ig{background:linear-gradient(45deg,#F58529,#DD2A7B 45%,#8134AF 78%,#515BD4);color:#fff}
+.ctile .lbl{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-br);margin-bottom:.28rem}
+.ctile .val{font-size:.98rem;color:#fff;font-weight:500;line-height:1.3;word-break:break-word}
+.ctile .val a{color:#fff}
+.ctile .val a:hover{text-decoration:underline}
+.ctile .val .sep{color:rgba(255,255,255,.38);margin:0 .35rem}
+.wa-card{display:flex;align-items:center;gap:1.5rem;margin-top:1rem;padding:1.4rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);text-align:left}
+.wa-card .qr-wrap{flex:none;width:132px;height:132px;background:#fff;border-radius:12px;padding:9px}
+.wa-card .qr{width:100%;height:100%;display:block}
+.wa-card h3{color:#fff;font-size:1.15rem;margin-bottom:.4rem}
+.wa-card p{color:rgba(255,255,255,.72);font-size:.9rem;margin-bottom:.95rem;max-width:40ch}
+.office-line{margin-top:1.7rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:rgba(255,255,255,.6)}
 
 /* =========================================================
    FOOTER
@@ -365,7 +388,9 @@ em{font-style:italic;color:var(--teal)}
   .practice .split{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr 1fr}
   .principle:nth-child(even){padding-left:.5rem;border-left:0}
-  .contact-details{flex-direction:column;gap:1.3rem}
+  .contact-grid{grid-template-columns:1fr}
+  .wa-card{flex-direction:column;text-align:center}
+  .wa-card p{max-width:none}
 }
 
 /* accessibility: respect reduced-motion */
@@ -411,7 +436,6 @@ em{font-style:italic;color:var(--teal)}
 <!-- ============================== HERO ============================== -->
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow reveal d1">London E17 — Accountants &amp; Tax Advisers</p>
     <!-- EDIT: main headline. Words inside <em> ... </em> appear in teal italic. -->
     <h1 class="reveal d2">Sound accounts. <em>Sharper</em> decisions.</h1>
     <p class="reveal d3">Tax, bookkeeping and payroll for sole traders, limited companies and growing businesses across London and the UK — delivered with precision and a personal touch.</p>
@@ -419,8 +443,6 @@ em{font-style:italic;color:var(--teal)}
       <a class="btn btn--primary" href="#services">Explore Services <span class="arrow">→</span></a>
       <a class="btn btn--ghost" href="mailto:info@accountingnation.co.uk?subject=Quote%20request">Request a Quote</a>
     </div>
-    <!-- EDIT: your address -->
-    <p class="hero-addr reveal d5">Suite Ra01, 195–197 Wood Street, London E17 3NU</p>
   </div>
 </section>
 
@@ -581,12 +603,36 @@ em{font-style:italic;color:var(--teal)}
       <h2>Let's talk about your accounts.</h2>
       <p>Tell us about your business and we'll send a clear, fixed-fee quote — usually within one working day.</p>
       <a class="btn btn--primary" href="mailto:info@accountingnation.co.uk?subject=Quote%20request">Request a Quote <span class="arrow">→</span></a>
-      <div class="contact-details">
-        <!-- EDIT: your contact details. Add a phone line by copying one of these blocks. -->
-        <div><span class="k">Email</span><a href="mailto:info@accountingnation.co.uk">info@accountingnation.co.uk</a></div>
-        <div><span class="k">Office</span>Suite Ra01, 195–197 Wood Street, London E17 3NU</div>
-        <div><span class="k">Phone</span><a href="tel:+44">07480 857764/ 07356 024460</a></div>
+      <div class="contact-grid">
+        <!-- EDIT: your contact links -->
+        <a class="ctile" href="mailto:info@accountingnation.co.uk?subject=Enquiry">
+          <span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><span class="lbl">Email</span><span class="val">info@accountingnation.co.uk</span></span>
+        </a>
+        <div class="ctile">
+          <span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.6C3 13 11 21 19.4 21a1.5 1.5 0 0 0 1.6-1.5v-2a1 1 0 0 0-.75-.97l-3.1-.78a1 1 0 0 0-1 .32l-.9 1.05a13 13 0 0 1-5.2-5.2l1.05-.9a1 1 0 0 0 .32-1l-.78-3.1A1 1 0 0 0 6.5 3z"/></svg></span>
+          <span><span class="lbl">Telephone</span><span class="val"><a href="tel:+447356024460">07356 024460</a><span class="sep">/</span><a href="tel:+447480857764">07480 857764</a></span></span>
+        </div>
+        <a class="ctile" href="https://wa.me/447356024460?text=Hi%20Accounting%20Nation%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">
+          <span class="chip wa"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.02zM12.04 20.06h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24a8.2 8.2 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.55.13-.17.24-.64.8-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42-.14-.01-.3-.01-.46-.01-.16 0-.42.06-.64.31-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.17 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.57.18 1.1.16 1.51.1.46-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg></span>
+          <span><span class="lbl">WhatsApp</span><span class="val">Message us to chat</span></span>
+        </a>
+        <a class="ctile" href="https://www.instagram.com/accounting.nation/" target="_blank" rel="noopener">
+          <span class="chip ig"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+          <span><span class="lbl">Instagram</span><span class="val">@accounting.nation</span></span>
+        </a>
       </div>
+
+      <div class="wa-card">
+        <div class="qr-wrap"><svg class="qr" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WhatsApp QR code"><rect width="33" height="33" fill="#ffffff"/><path d="M4 4h7v1h-7zM12 4h1v1h-1zM15 4h1v1h-1zM17 4h1v1h-1zM19 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM15 5h1v1h-1zM18 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM15 6h2v1h-2zM18 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h4v1h-4zM17 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h2v1h-2zM15 8h1v1h-1zM17 8h1v1h-1zM19 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h2v1h-2zM15 9h3v1h-3zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h5v1h-5zM18 11h2v1h-2zM4 12h1v1h-1zM8 12h1v1h-1zM10 12h3v1h-3zM14 12h1v1h-1zM18 12h1v1h-1zM20 12h6v1h-6zM28 12h1v1h-1zM4 13h1v1h-1zM6 13h1v1h-1zM8 13h2v1h-2zM11 13h2v1h-2zM14 13h4v1h-4zM19 13h1v1h-1zM24 13h2v1h-2zM27 13h1v1h-1zM4 14h2v1h-2zM7 14h2v1h-2zM10 14h1v1h-1zM13 14h1v1h-1zM15 14h7v1h-7zM23 14h4v1h-4zM5 15h1v1h-1zM7 15h1v1h-1zM11 15h1v1h-1zM13 15h4v1h-4zM19 15h1v1h-1zM23 15h1v1h-1zM26 15h2v1h-2zM5 16h1v1h-1zM9 16h2v1h-2zM14 16h1v1h-1zM16 16h1v1h-1zM18 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM25 16h4v1h-4zM4 17h3v1h-3zM8 17h1v1h-1zM13 17h2v1h-2zM16 17h2v1h-2zM19 17h1v1h-1zM24 17h1v1h-1zM27 17h1v1h-1zM7 18h1v1h-1zM9 18h4v1h-4zM15 18h1v1h-1zM19 18h1v1h-1zM22 18h5v1h-5zM7 19h1v1h-1zM9 19h1v1h-1zM14 19h2v1h-2zM21 19h4v1h-4zM26 19h2v1h-2zM4 20h2v1h-2zM7 20h2v1h-2zM10 20h2v1h-2zM14 20h1v1h-1zM18 20h9v1h-9zM12 21h2v1h-2zM15 21h3v1h-3zM20 21h1v1h-1zM24 21h1v1h-1zM4 22h7v1h-7zM12 22h4v1h-4zM17 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM4 23h1v1h-1zM10 23h1v1h-1zM13 23h2v1h-2zM16 23h1v1h-1zM19 23h2v1h-2zM24 23h5v1h-5zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h1v1h-1zM14 24h1v1h-1zM18 24h1v1h-1zM20 24h7v1h-7zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM14 25h4v1h-4zM19 25h1v1h-1zM21 25h3v1h-3zM26 25h3v1h-3zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM18 26h1v1h-1zM20 26h3v1h-3zM25 26h1v1h-1zM27 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM15 27h2v1h-2zM19 27h1v1h-1zM22 27h6v1h-6zM4 28h7v1h-7zM12 28h1v1h-1zM14 28h1v1h-1zM18 28h2v1h-2zM21 28h2v1h-2zM26 28h3v1h-3z" fill="#0C2436"/></svg></div>
+        <div>
+          <h3>Prefer WhatsApp?</h3>
+          <p>Point your phone camera at the code to start a chat with us — or tap the WhatsApp tile above.</p>
+          <a class="btn btn--primary" href="https://wa.me/447356024460?text=Hi%20Accounting%20Nation%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">Open WhatsApp chat <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <p class="office-line">Suite Ra01, 195&ndash;197 Wood Street, London E17 3NU</p>
     </div>
   </div>
 </section>
